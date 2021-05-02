@@ -12,9 +12,12 @@
   "license": "MIT",
   "scripts": {
     "build:app:docker": "REACT_APP_SOCKET_SERVER_URL=http://localhost:3111 yarn workspace excalidraw build:app:docker ",
-    "build:room:docker": "yarn workspace excalidraw-portal build",
+    "build:app": "yarn workspace excalidraw build:app",
+    "build:room": "yarn workspace excalidraw-portal build",
+    "build": "yarn build:room",
     "run:room": "PORT=3111 yarn workspace excalidraw-portal start",
     "run:app": "REACT_APP_SOCKET_SERVER_URL=http://localhost:3111 yarn workspace excalidraw start",
-    "start": "yarn run:room & yarn run:app"
+    "start": "yarn run:room"
   }
 }
+ 
