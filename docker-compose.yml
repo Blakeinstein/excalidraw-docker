@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  excalidraw:
+    build:
+      context: ./excalidraw
+      args:
+        - NODE_ENV=production
+    container_name: excalidraw
+    ports:
+      - "3000:80"
+    restart: on-failure
+    stdin_open: true
+    healthcheck:
+      disable: true
+    environment:
+      - NODE_ENV=production
+      - REACT_APP_SOCKET_SERVER_URL=http://localhost:3001
+    volumes:
+      - ./excalidraw:/opt/node_app/app:delegated
+      - ./excalidraw/package.json:/opt/node_app/package.json
+      - ./excalidraw/yarn.lock:/opt/node_app/yarn.lock
+      - notused:/opt/node_app/app/node_modules
+  excalidraw-room:
+    build:
+      context: ./excalidraw-room
+    container_name: excalidraw-room  
+    ports:
+        - "3001:80"
+    restart: on-failure
+    stdin_open: true
+    healthcheck:
+      disable: true
+
+volumes:
+  notused:

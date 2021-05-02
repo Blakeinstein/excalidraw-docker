@@ -29,7 +29,7 @@ const generateEncryptionKey = async () => {
   return (await window.crypto.subtle.exportKey("jwk", key)).k;
 };
 
-export const SOCKET_SERVER = process.env.REACT_APP_SOCKET_SERVER_URL;
+export const SOCKET_SERVER = process.env.REACT_APP_SOCKET_SERVER_URL || "http://localhost:3001";
 
 export type EncryptedData = {
   data: ArrayBuffer;
