@@ -1,0 +1,20 @@
+{
+  "name": "excalidraw-docker",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "excalidraw",
+    "excalidraw-room"
+  ],
+  "main": "index.js",
+  "repository": "https://github.com/Blakeinstein/excalidraw-docker.git",
+  "author": "Blaine <rishi1998@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build:app:docker": "REACT_APP_SOCKET_SERVER_URL=http://localhost:3111 yarn workspace excalidraw build:app:docker ",
+    "build:room:docker": "yarn workspace excalidraw-portal build",
+    "run:room": "PORT=3111 yarn workspace excalidraw-portal start",
+    "run:app": "REACT_APP_SOCKET_SERVER_URL=http://localhost:3111 yarn workspace excalidraw start",
+    "start": "yarn run:room & yarn run:app"
+  }
+}
