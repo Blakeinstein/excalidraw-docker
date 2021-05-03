@@ -26,7 +26,8 @@ const io = socketIO(server, {
   handlePreflightRequest: (req, res) => {
     const headers = {
       "Access-Control-Allow-Headers": "Content-Type, Authorization",
-      "Access-Control-Allow-Origin": 'https://*.netlify.app',
+      "Access-Control-Allow-Origin": 
+        (req.header && req.header.origin) || process.env.FRONTEND_URI || "https://quizzical-clarke-3b08d5.netlify.app",
       "Access-Control-Allow-Credentials": true,
     };
     res.writeHead(200, headers);
