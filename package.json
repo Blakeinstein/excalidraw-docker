@@ -11,12 +11,11 @@
   "author": "Blaine <rishi1998@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build:app:docker": "REACT_APP_SOCKET_SERVER_URL=http://localhost:3111 yarn workspace excalidraw build:app:docker ",
+    "build:app:docker": "yarn workspace excalidraw build:app:docker ",
     "build:app": "yarn workspace excalidraw build:app",
-    "build:room": "yarn workspace excalidraw-portal build",
-    "build": "yarn build:room",
-    "run:room": "PORT=3111 yarn workspace excalidraw-portal start",
-    "run:app": "REACT_APP_SOCKET_SERVER_URL=http://localhost:3111 yarn workspace excalidraw start",
+    "build": "yarn workspace excalidraw-portal build",
+    "run:room": "yarn workspace excalidraw-portal start",
+    "run:app": "yarn workspace excalidraw start",
     "start": "yarn workspace excalidraw-portal start"
   }
 }
