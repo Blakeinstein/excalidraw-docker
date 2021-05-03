@@ -17,7 +17,7 @@
     "build": "yarn build:room",
     "run:room": "PORT=3111 yarn workspace excalidraw-portal start",
     "run:app": "REACT_APP_SOCKET_SERVER_URL=http://localhost:3111 yarn workspace excalidraw start",
-    "start": "yarn run:room"
+    "start": "yarn workspace excalidraw-portal start"
   }
 }
  
